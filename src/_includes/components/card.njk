@@ -1,0 +1,9 @@
+{% macro card(cardStyle, title, description) %}
+    <div class="card {{ cardStyle }}">
+        <div>
+                <h3 class="card-header">{{ title }}</h3>
+                <p class="card-text">{{ description }}</p>
+        </div>
+        <h4 class="card-sign">BEVURA</h4>
+    </div>
+{% endmacro %}

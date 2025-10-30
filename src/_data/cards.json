@@ -1,0 +1,17 @@
+[
+  {
+    "cardStyle": "filled-card",
+    "title": "Большой опыт",
+    "description": "10 лет на рынке — это не просто цифра"
+  },
+  {
+    "cardStyle": "outlined-card",
+    "title": "Быстрая доставка",
+    "description": "Когда продукт нужен \"на вчера\" — мы справимся"
+  },
+  {
+    "cardStyle": "filled-card",
+    "title": "Большие объемы",
+    "description": "Даже если вам нужно много и сразу — всё будет вовремя"
+  }
+]

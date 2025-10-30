@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or 'Бевура' }}</title>
+  <meta name="description" content="{{ description or 'ООО Бевура — поставки кормовых продуктов, соевый и подсолнечный шрот, реквизиты, контакты, продукция.' }}">
+  <meta name="keywords" content="{{ keywords or 'шрот, соевый шрот, подсолнечный шрот, корм, Бевура, реквизиты, продукция, Беларусь, Гродно, комбикорм, КРС, корм для КРС' }}">
+  <meta name="author" content="ООО Бевура">
+
+  <meta property="og:title" content="{{ title or 'Бевура' }}">
+  <meta property="og:description" content="{{ description or 'Кормовые продукты и реквизиты компании Бевура' }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bevura.by{{ page.url }}">
+  <meta property="og:image" content="https://bevura.by/assets/preview.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="/assets/reset.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/preloader.js"></script>
+  <script src="/assets/burger.js"></script>
+
+</head>
+<body>
+  {% if page.url == "/" %}
+    {% include "components/preloader.html" %}
+  {% endif %}
+  {% if preload %}
+    {% include "components/preloader.html" %}
+  {% endif %}
+
+  {% include "components/header.html" %}
+  <main>
+    {{ content | safe }}
+  </main>
+  {% include "components/footer.html" %}
+  <script src="/assets/main.js" type="module"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+       emailjs.init({
+           publicKey: '0NhaAFg9xU7APbrbq',
+           blockHeadless: true,
+         });
+    </script>
+</body>
+</html>

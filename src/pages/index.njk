@@ -1,0 +1,80 @@
+---
+permalink: "/"
+layout: layouts/base.njk
+description: "ООО Бевура — надёжный поставщик кормовых продуктов: соевый и подсолнечный шрот, реквизиты, контакты, продукция. Работаем официально, заключаем договоры, обеспечиваем сопровождение сделок."
+keywords: "Бевура, корм, кормовые продукты, соевый шрот, подсолнечный шрот, реквизиты, Беларусь, Гродно, Мосты, поставки, сельское хозяйство, КРС, птица, свиньи"
+title: "Бевура - Главная"
+preloader: true
+---
+{% from "components/card.njk" import card %}
+{% from "components/productCard.njk" import productCard %}
+
+
+{% include "components/hero-image.html"%}
+<section>
+    <div style="max-width: 940px; width: 100%;">
+        <h2 class="section-header">ПОЧЕМУ ИМЕННО МЫ?</h2>
+    </div>
+    <div class="cards-wrapper" id="cards">
+        {% for item in cards %}
+            {{ card(item.cardStyle, item.title, item.description) }}
+        {% endfor %}
+    </div>
+</section>
+<section>
+    <h2 class="section-header">ПРОДУКЦИЯ</h2>
+    <div class="cards-wrapper" id="products-wrapper">
+        {% for item in products %}
+            {{ productCard(item.productTitle, item.productDescription, item.productImg, item.productKey) }}
+        {% endfor %}
+    </div>
+</section>
+<section id="main-form__section">
+    <h2 class="section-header">КАК ЗАКАЗАТЬ</h2>
+    <div id="toast" class="toast">Сообщение отправлено успешно!</div>
+    <div class="section-block">
+        <div class="section-block__item">
+            <form id="main-form">
+                <h3 class="form-header">ЗАЯВКА</h3>
+                <div class="main-form__block">
+                    <div class="main-form__block__item">
+                        <label class="form-label" for="name">Ваше имя<b>*</b></label>
+                        <input type="text" id="name" name="name" value="" autocomplete="off" placeholder="Иван Иванов">
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="main-form__block__item middleName-input">
+                        <label for="middleName">Отчество</label>
+                        <input type="text" id="middleName" name="middleName" autocomplete="off">
+                    </div>
+                    <div class="main-form__block__item">
+                        <label class="form-label" for="phone">Ваш номер<b>*</b></label>
+                        <input type="text" id="phone" name="phone" value="" autocomplete="off" placeholder="+375 33 1234 567">
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="main-form__block__item">
+                        <label class="form-label" for="addons">Дополнительно</label>
+                        <textarea id="addons" name="addons" value="" autocomplete="off"></textarea>
+                    </div>
+                    <div class="form-button__block">
+                        <button type="submit" class="filled-button">Отправить</button>
+                        <button type="button" class="clear-button">Отменить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="section-block__item">
+            <p><b>Заполните форму</b> — и наш специалист оперативно свяжется с вами</p>
+            <div>
+                <b>Почему стоит оставить заявку?</b>
+                <p>Мы подскажем актуальную цену, проконсультируем по условиям поставки и рассчитаем стоимость с доставкой. Быстро и качественно</p>
+            </div>
+            <div>
+                <b>Поставки — в один шаг от вас</b>
+                <p>Мы работаем только с проверенными производителями и доставляем продукцию точно в срок.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/assets/validation.js"></script>
+

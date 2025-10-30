@@ -1,0 +1,12 @@
+{% macro productCard(productTitle, productDescription, productImg, productKey) %}
+    <div style="background-image: url('/assets/images/{{ productImg }}')" class="product-card">
+        <div class="gradient-overlay">
+            <h4 class="product-header">{{ productTitle }}</h4>
+                    <p class="product-desc">{{ productDescription }}</p>
+                    <div class="product-card__buttons">
+                        <a href="/#main-form" class="outlined-button js-scroll">Оставить заявку</a>
+                        <a href="/products/{{ productKey }}" class="secondary-link">Подробнее</a>
+                    </div>
+        </div>
+    </div>
+{% endmacro %}
