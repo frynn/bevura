@@ -1,7 +1,4 @@
-require("dotenv").config();
-
 module.exports = function (config) {
-    config.addGlobalData("env", process.env);
     config.addPassthroughCopy({ "src/assets": "assets" });
 
     return {
